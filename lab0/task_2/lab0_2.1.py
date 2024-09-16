@@ -18,6 +18,8 @@ def main():
         if 0 <= n <= 45:
             res = calc_fib(n)
             file_output.write(str(res))
+        else:
+            print('Введите другое число')
 
     file_output.close()
 

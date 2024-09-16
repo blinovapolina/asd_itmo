@@ -6,6 +6,8 @@ with open('input.txt', 'r') as f:
     a, b = map(int, list(file.split(' ')))
     if (-10) ** 9 <= a <= 10 ** 9 and (-10) ** 9 <= b <= 10 ** 9:
         file_output.write(str(a + b))
+    else:
+        print('Введите другое число')
 
 
 file_output.close()

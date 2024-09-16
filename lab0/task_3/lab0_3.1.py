@@ -21,6 +21,8 @@ def main():
         if 0 <= n <= 10 ** 7:
             res = calc_fib_last_digit(n)
             file_output.write(str(res))
+        else:
+            print('Введите другое число')
 
     file_output.close()
 
