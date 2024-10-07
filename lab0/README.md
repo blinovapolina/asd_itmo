@@ -11,7 +11,7 @@
    ```
 2. Перейдите в папку с проектом:
    ```bash
-   cd repository-name/lab1
+   cd repository-name/lab0
    ```
 3. Запустите программу:
    ```bash
