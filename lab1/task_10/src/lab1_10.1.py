@@ -1,3 +1,9 @@
+import time
+import tracemalloc
+
+start = time.perf_counter()
+tracemalloc.start()
+
 file_output = open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_10/tests/output.txt", 'w')
 
 
@@ -30,7 +36,7 @@ def palindrom(str_in):
         return chet_letters + chet_letters[::-1]
 
 
-with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_10/tests/input_1.txt", 'r') as f:
+with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_10/tests/input_3.txt", 'r') as f:
     file = f.readlines()
     n = int(file[0])
     if 1 <= n <= 100000:
@@ -41,3 +47,8 @@ with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_10/tests/input_1.txt", 
         print('Неверный ввод данных')
 
 file_output.close()
+finish = time.perf_counter()
+print('Время работы: ' + str(finish - start))
+print('Память: ' + str(tracemalloc.get_traced_memory()[1]/1024) + ' Кб')
+tracemalloc.stop()
+

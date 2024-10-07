@@ -1,4 +1,4 @@
-file_output = open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_5/tests/output.txt", 'w')
+file_output = open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_1/tests/output.txt", 'w')
 
 
 def insertion_sort(n, list_arr):
@@ -12,17 +12,7 @@ def insertion_sort(n, list_arr):
     return list_arr
 
 
-def selection_sort(n, A):
-    for i in range(n - 1):
-        min_local = i
-        for j in range(i + 1, n):
-            if A[j] < A[min_local]:
-                min_local = j
-        A[i], A[min_local] = A[min_local], A[i]
-    return A
-
-
-with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_5/tests/input.txt", 'r') as f:
+with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_1/tests/input.txt", 'r') as f:
     file = f.readlines()
     n = int(file[0])
     if 1 <= n <= 10 ** 3:
@@ -35,3 +25,4 @@ with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_5/tests/input.txt", 'r'
         print('Неверный ввод данных')
 
 file_output.close()
+

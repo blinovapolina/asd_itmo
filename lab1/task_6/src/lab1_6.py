@@ -1,7 +1,3 @@
-import time
-
-start = time.perf_counter()
-
 file_output = open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_6/tests/output.txt", 'w')
 
 
@@ -26,7 +22,3 @@ with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_6/tests/input.txt", 'r'
         print('Неверный ввод данных')
 
 file_output.close()
-
-finish = time.perf_counter()
-print('Время работы: ' + str(finish - start))
-
