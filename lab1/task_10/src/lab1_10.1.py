@@ -36,7 +36,7 @@ def palindrom(str_in):
         return chet_letters + chet_letters[::-1]
 
 
-with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_10/tests/input_3.txt", 'r') as f:
+with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_10/tests/input_2.txt", 'r') as f:
     file = f.readlines()
     n = int(file[0])
     if 1 <= n <= 100000:
