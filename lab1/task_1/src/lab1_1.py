@@ -1,4 +1,8 @@
-file_output = open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_1/tests/output.txt", 'w')
+from asd_itmo.utils import open_file, write_file
+
+
+PATH_INPUT = '../txtf/input.txt'
+PATH_OUTPUT = '../txtf/output.txt'
 
 
 def insertion_sort(n, list_arr):
@@ -12,17 +16,14 @@ def insertion_sort(n, list_arr):
     return list_arr
 
 
-with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_1/tests/input.txt", 'r') as f:
-    file = f.readlines()
-    n = int(file[0])
-    if 1 <= n <= 10 ** 3:
-        nums = list(map(int, list(file[1].split(' '))))
-        if all([abs(n) <= 10 ** 9 for x in nums]):
-            file_output.write(' '.join(map(str, insertion_sort(n, nums))))
-        else:
-            print('Введите другое число')
+def task_1():
+    n, nums = open_file(PATH_INPUT)
+    if 1 <= n <= 10 ** 3 and all([abs(n) <= 10 ** 9 for x in nums]):
+        write_file(insertion_sort(n, nums), PATH_OUTPUT)
     else:
-        print('Неверный ввод данных')
+        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
 
-file_output.close()
+
+if __name__ == "__main__":
+    task_1()
 

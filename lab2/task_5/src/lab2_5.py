@@ -1,4 +1,8 @@
-file_output = open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab2/task_5/tests/output.txt", 'w')
+from asd_itmo.utils import open_file, write_file
+
+
+PATH_INPUT = '../txtf/input_1.txt'
+PATH_OUTPUT = '../txtf/output.txt'
 
 
 def find_majority(list_arr, left_i, right_i):
@@ -6,8 +10,16 @@ def find_majority(list_arr, left_i, right_i):
         return list_arr[left_i]
 
     middle_arr = (left_i + right_i) // 2
-    left = find_majority(list_arr, left_i, middle_arr)
-    right = find_majority(list_arr, middle_arr + 1, right_i)
+
+    if left_i == middle_arr:
+        left = list_arr[left_i]
+    else:
+        left = find_majority(list_arr, left_i, middle_arr)
+
+    if middle_arr + 1 == right_i:
+        right = list_arr[right_i]
+    else:
+        right = find_majority(list_arr, middle_arr + 1, right_i)
 
     counter_left, counter_right = 0, 0
     for i in range(left_i, right_i + 1):
@@ -18,7 +30,7 @@ def find_majority(list_arr, left_i, right_i):
     return left if counter_left > counter_right else right
 
 
-def majority(list_arr):
+def majority(n, list_arr):
     result = find_majority(list_arr, 0, len(list_arr) - 1)
     if result:
         if list_arr.count(result) > n / 2:
@@ -26,17 +38,16 @@ def majority(list_arr):
     return 0
 
 
-with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab2/task_5/tests/input_1.txt", 'r') as f:
-    file = f.readlines()
-    n = int(file[0])
-    if 1 <= n <= 10 ** 5:
-        nums = list(map(int, list(file[1].split(' '))))
-        if all([abs(n) <= 10 ** 9 for x in nums]):
-            file_output.write(str(majority(nums)))
-        else:
-            print('Введите другое число')
+def task_5():
+    n, nums = open_file(PATH_INPUT)
+    if 1 <= n <= 10 ** 5 and all([abs(n) <= 10 ** 9 for _ in nums]):
+        write_file(str(majority(n, nums)), PATH_OUTPUT)
     else:
-        print('Неверный ввод данных')
+        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
 
-file_output.close()
+
+if __name__ == "__main__":
+    task_5()
+
+
 

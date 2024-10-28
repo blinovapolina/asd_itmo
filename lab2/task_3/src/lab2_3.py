@@ -1,4 +1,8 @@
-file_output = open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab2/task_3/tests/output.txt", 'w')
+from asd_itmo.utils import open_file, write_file
+
+
+PATH_INPUT = '../txtf/input.txt'
+PATH_OUTPUT = '../txtf/output.txt'
 
 
 def merge_count(arr, temp_arr, left, mid, right):
@@ -46,17 +50,13 @@ def merge_sort_count(list_arr, temp, left_i, right_i):
     return inversion_counter
 
 
-with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab2/task_3/tests/input.txt", 'r') as f:
-    file = f.readlines()
-    n = int(file[0])
-    if 1 <= n <= 2 * (10 ** 4):
-        nums = list(map(int, list(file[1].split(' '))))
-        if all([abs(n) <= 10 ** 9 for x in nums]):
-            file_output.write((str(merge_sort_count(nums, [0] * n, 0, n - 1))))
-        else:
-            print('Введите другое число')
+def task_3():
+    n, nums = open_file(PATH_INPUT)
+    if 1 <= n <= 2 * (10 ** 4) and all([abs(n) <= 10 ** 9 for _ in nums]):
+        write_file(str((merge_sort_count(nums, [0] * n, 0, n - 1))), PATH_OUTPUT)
     else:
-        print('Неверный ввод данных')
+        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
 
-file_output.close()
 
+if __name__ == "__main__":
+    task_3()

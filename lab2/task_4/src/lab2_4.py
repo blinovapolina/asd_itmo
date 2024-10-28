@@ -1,4 +1,8 @@
-file_output = open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab2/task_4/tests/output.txt", 'w')
+from asd_itmo.utils import open_file, write_file
+
+
+PATH_INPUT = '../txtf/input.txt'
+PATH_OUTPUT = '../txtf/output.txt'
 
 
 def binary_search(list_arr, number):
@@ -14,21 +18,14 @@ def binary_search(list_arr, number):
     return -1
 
 
-with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab2/task_4/tests/input.txt", 'r') as f:
-    file = f.readlines()
-    n = int(file[0])
-    nums = list(map(int, list(file[1].split(' '))))
-    k = int(file[2])
-    list_search = list(map(int, list(file[3].split(' '))))
-    if 1 <= n <= 10 ** 5 and 1 <= k <= 10 ** 5:
-        nums = list(map(int, list(file[1].split(' '))))
-        if all([abs(n) <= 10 ** 9 for x in nums]) and all([abs(n) <= 10 ** 9 for x in list_search]):
-            result = [binary_search(nums, number) for number in list_search]
-            file_output.write(' '.join(map(str, result)))
-        else:
-            print('Введите другое число')
+def task_4():
+    n, nums, k, list_search = open_file(PATH_INPUT)
+    if 1 <= n <= 10 ** 5 and 1 <= k <= 10 ** 5 and all([abs(n) <= 10 ** 9 for _ in nums]):
+        write_file([binary_search(nums, number) for number in list_search], PATH_OUTPUT)
     else:
-        print('Неверный ввод данных')
+        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
 
-file_output.close()
+
+if __name__ == "__main__":
+    task_4()
 

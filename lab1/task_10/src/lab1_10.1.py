@@ -1,10 +1,10 @@
 import time
 import tracemalloc
+from asd_itmo.utils import open_file, write_file
 
-start = time.perf_counter()
-tracemalloc.start()
 
-file_output = open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_10/tests/output.txt", 'w')
+PATH_INPUT = '../txtf/input_1.txt'
+PATH_OUTPUT = '../txtf/output.txt'
 
 
 def palindrom(str_in):
@@ -36,19 +36,20 @@ def palindrom(str_in):
         return chet_letters + chet_letters[::-1]
 
 
-with open("C:/Users/Slawa/Desktop/Uni/asd_itmo/lab1/task_10/tests/input_2.txt", 'r') as f:
-    file = f.readlines()
-    n = int(file[0])
+def task_10():
+    start = time.perf_counter()
+    tracemalloc.start()
+    n, letters = open_file(PATH_INPUT)
     if 1 <= n <= 100000:
-        letters = list(file[1])
-        result = palindrom(letters)
-        file_output.write(result)
+        write_file(palindrom(letters), PATH_OUTPUT)
     else:
-        print('Неверный ввод данных')
+        print("Количество элементов не соответствует ограничениям")
+    finish = time.perf_counter()
+    print('Время работы: ' + str(finish - start))
+    print('Память: ' + str(tracemalloc.get_traced_memory()[1] / 1024) + ' Кб')
+    tracemalloc.stop()
 
-file_output.close()
-finish = time.perf_counter()
-print('Время работы: ' + str(finish - start))
-print('Память: ' + str(tracemalloc.get_traced_memory()[1]/1024) + ' Кб')
-tracemalloc.stop()
+
+if __name__ == "__main__":
+    task_10()
 
