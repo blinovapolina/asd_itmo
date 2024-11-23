@@ -33,7 +33,7 @@
    ```
 3. Запустите программу:
    ```bash
-   python src/lab1_2.py
+   python task_2/src/lab1_2.py
    ```
 
 
