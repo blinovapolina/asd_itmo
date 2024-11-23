@@ -31,11 +31,6 @@
    ```
 3. Запустите программу:
    ```bash
-   python src/main.py
-   ```
-
-4. Запуск тестов:
-   ```bash
    python task_3/src/lab1_3.py
    ```
 
