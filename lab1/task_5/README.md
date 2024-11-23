@@ -31,7 +31,7 @@
    ```
 3. Запустите программу:
    ```bash
-   python task_3/src/lab1_3.py
+   python task_5/src/lab1_5.py
    ```
 
 
