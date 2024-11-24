@@ -22,7 +22,7 @@
 ## Инструкция по запуску
 1. Клонирование репозитория:
   ```
-  git clone [https://github.com/blinovapolina/asd_itmo]
+  git clone https://github.com/blinovapolina/asd_itmo
   ```
 2. Выберите необходимую лабораторную с номером *:
   ```
