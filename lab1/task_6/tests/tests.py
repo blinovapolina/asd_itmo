@@ -1,5 +1,5 @@
 from asd_itmo.lab1.task_6.src.lab1_6 import bubble_sort
-from asd_itmo.utils import test
+from asd_itmo.lab1.utils import test
 
 
 example_arr = [5, 6, 9, 0, 4, 6, 5, 1]

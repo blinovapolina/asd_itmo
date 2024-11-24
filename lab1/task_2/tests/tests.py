@@ -1,5 +1,5 @@
 from asd_itmo.lab1.task_2.src.lab1_2 import insertion_sort
-from asd_itmo.utils import test
+from asd_itmo.lab1.utils import test
 
 
 example_arr = [1, 8, 4, 2, 3, 7, 5, 6, 9, 0]

@@ -1,4 +1,4 @@
-from asd_itmo.utils import open_file, write_file
+from asd_itmo.lab2.utils import open_file, write_file, measuring
 
 
 PATH_INPUT = '../txtf/input.txt'
@@ -53,6 +53,7 @@ def task_2():
         for num_line in res:
             write_file(num_line + "\n", PATH_OUTPUT)
         write_file(" ".join(map(str, nums)), PATH_OUTPUT)
+        measuring(merge_sort_output, nums, [0] * n, 0, n - 1, res)
 
     else:
         print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")

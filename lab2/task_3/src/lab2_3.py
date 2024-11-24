@@ -1,4 +1,4 @@
-from asd_itmo.utils import open_file, write_file
+from asd_itmo.lab2.utils import open_file, write_file, measuring
 
 
 PATH_INPUT = '../txtf/input.txt'
@@ -54,6 +54,7 @@ def task_3():
     n, nums = open_file(PATH_INPUT)
     if 1 <= n <= 2 * (10 ** 4) and all([abs(n) <= 10 ** 9 for _ in nums]):
         write_file(str((merge_sort_count(nums, [0] * n, 0, n - 1))), PATH_OUTPUT)
+        measuring(merge_sort_count, nums, [0] * n, 0, n - 1)
     else:
         print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
 

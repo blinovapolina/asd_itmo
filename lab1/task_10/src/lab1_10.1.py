@@ -1,6 +1,6 @@
 import time
 import tracemalloc
-from asd_itmo.utils import open_file, write_file
+from asd_itmo.lab1.utils import open_file, write_file
 
 
 PATH_INPUT = '../txtf/input_1.txt'

@@ -1,5 +1,5 @@
 from asd_itmo.lab2.task_10.src.lab2_10 import merge_sort
-from asd_itmo.utils import test
+from asd_itmo.lab2.utils import test
 
 
 example_arr = [12, 52, 0, 7, 9, 1]

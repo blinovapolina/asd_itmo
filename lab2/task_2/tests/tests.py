@@ -1,6 +1,6 @@
 import random
 from asd_itmo.lab2.task_2.src.lab2_2 import merge_sort_output
-from asd_itmo.utils import test
+from asd_itmo.lab2.utils import test
 
 
 example_arr = [1, 8, 2, 1, 4, 7, 3, 2, 3, 6]

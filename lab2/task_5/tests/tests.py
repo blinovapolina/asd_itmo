@@ -1,6 +1,6 @@
 import random
 from asd_itmo.lab2.task_5.src.lab2_5 import majority
-from asd_itmo.utils import test
+from asd_itmo.lab2.utils import test
 
 
 example_arr = [2, 3, 9, 2, 2]

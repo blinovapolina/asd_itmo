@@ -1,4 +1,4 @@
-from asd_itmo.utils import open_file, write_file
+from asd_itmo.lab2.utils import open_file, write_file, measuring
 
 
 PATH_INPUT = '../txtf/input_1.txt'
@@ -42,6 +42,7 @@ def task_5():
     n, nums = open_file(PATH_INPUT)
     if 1 <= n <= 10 ** 5 and all([abs(n) <= 10 ** 9 for _ in nums]):
         write_file(str(majority(n, nums)), PATH_OUTPUT)
+        measuring(majority, n, nums)
     else:
         print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
 

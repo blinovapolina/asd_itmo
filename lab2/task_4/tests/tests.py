@@ -1,5 +1,5 @@
 from asd_itmo.lab2.task_4.src.lab2_4 import binary_search
-from asd_itmo.utils import test
+from asd_itmo.lab2.utils import test
 
 
 example_arr = [1, 5, 8, 12, 13]
