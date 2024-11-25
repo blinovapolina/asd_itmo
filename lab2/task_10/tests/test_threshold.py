@@ -47,4 +47,5 @@ def find_threshold(max_size):
             break
 
 
-find_threshold(1000)
+if __name__ == '__main__':
+    find_threshold(1000)
