@@ -3,7 +3,7 @@ import datetime
 from lab2.task_3.src.lab2_3 import merge_sort_count
 
 
-class TestMergeSortOutput(unittest.TestCase):
+class TestMergeSortCount(unittest.TestCase):
     def test_should_sort_given_list(self):
         # Given
         unsorted_list = [1, 8, 2, 1, 4, 7, 3, 2, 3, 6]

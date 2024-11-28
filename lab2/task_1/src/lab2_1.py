@@ -1,4 +1,4 @@
-from lab2.utils import open_file, write_file, measuring
+from lab2.utils import open_file, write_file, measuring, print_input_output
 
 
 PATH_INPUT = '../txtf/input.txt'
@@ -42,7 +42,10 @@ def merge_sort(n, list_arr):
 def task_1():
     n, nums = open_file(PATH_INPUT)
     if 1 <= n <= 2 * (10 ** 4) and all([abs(n) <= 10 ** 9 for _ in nums]):
-        write_file(merge_sort(n, nums), PATH_OUTPUT)
+        inputs = str(n) + '\n' + ' '.join(map(str, nums))
+        result = ' '.join(map(str, merge_sort(n, nums)))
+        write_file(result, PATH_OUTPUT)
+        print_input_output(inputs=inputs, result=result)
         measuring(merge_sort, n, nums)
     else:
         print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")

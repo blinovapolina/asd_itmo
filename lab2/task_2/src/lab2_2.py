@@ -1,4 +1,4 @@
-from asd_itmo.lab2.utils import open_file, write_file, measuring
+from lab2.utils import open_file, write_file, measuring
 
 
 PATH_INPUT = '../txtf/input.txt'
@@ -48,11 +48,13 @@ def merge_sort_output(list_arr, temp, left_i, right_i, res):
 def task_2():
     n, nums = open_file(PATH_INPUT)
     if 1 <= n <= 2 * (10 ** 4) and all([abs(n) <= 10 ** 9 for _ in nums]):
+        print(f'Входные данные: \n{n}\n{" ".join(map(str, nums))}')
         res = list()
         merge_sort_output(nums, [0] * n, 0, n - 1, res)
         for num_line in res:
             write_file(num_line + "\n", PATH_OUTPUT)
         write_file(" ".join(map(str, nums)), PATH_OUTPUT)
+        print('Результат:\n' + "\n".join(map(str, res)) + '\n' + " ".join(map(str, nums)))
         measuring(merge_sort_output, nums, [0] * n, 0, n - 1, res)
 
     else:

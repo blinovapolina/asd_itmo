@@ -1,6 +1,5 @@
 import time
 import tracemalloc
-import random
 
 
 def open_file(file_name):
@@ -50,36 +49,16 @@ def write_file(arr, file_name):
                 file.write(arr)
 
 
-def test(function, arr=[], min_input=False, max_input=False, **kwargs):
-    if min_input:
-        arr = [0]
-    elif max_input:
-        arr = list(random.randint(kwargs['random_in']) for _ in range(kwargs['range_input']))
-
-    start_time = time.perf_counter()
-    tracemalloc.start()
-
-    if 'temp' in kwargs.keys() and 'left_i' in kwargs.keys() and 'right_i' in kwargs.keys() and 'res' in kwargs.keys():
-        function(arr, kwargs['temp'], kwargs['left_i'], kwargs['right_i'], kwargs['res'])
-    elif 'temp' in kwargs.keys() and 'left_i' in kwargs.keys() and 'right_i' in kwargs.keys():
-        function(arr, kwargs['temp'], kwargs['left_i'], kwargs['right_i'])
-    elif 'search_arr' in kwargs.keys():
-        for number in kwargs['search_arr']:
-            function(arr, number)
-    else:
-        function(len(arr), arr)
-
-    return_text = f'Время работы: {time.perf_counter() - start_time}\n ' \
-                  f'Память: {str(tracemalloc.get_traced_memory()[1] / 1024)} Кб'
-    tracemalloc.stop()
-    return return_text, arr
-
-
 def measuring(task_func, *args):
     start_time = time.perf_counter()
     tracemalloc.start()
 
-    result = task_func(*args)
+    task_func(*args)
     print(f'Время работы: {time.perf_counter() - start_time}\n'
           f'Память: {str(tracemalloc.get_traced_memory()[1] / 1024 ** 2)} Мб')
     tracemalloc.stop()
+
+
+def print_input_output(inputs=str, result=str):
+    print(f'Входные данные: \n{inputs}')
+    print(f'Результат: \n{result}')

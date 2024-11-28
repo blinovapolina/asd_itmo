@@ -3,7 +3,7 @@ import datetime
 from lab2.task_4.src.lab2_4 import search_elements
 
 
-class TestMergeSort(unittest.TestCase):
+class TestBinarySearch(unittest.TestCase):
     def test_should_given_large_list(self):
         # Given
         initial_list = [1, 5, 8, 12, 13]

@@ -3,7 +3,7 @@ import datetime
 from lab2.task_5.src.lab2_5 import majority
 
 
-class TestMergeSort(unittest.TestCase):
+class TestMajority(unittest.TestCase):
     def test_should_sort_given_list(self):
         # Given
         unsorted_list = [2, 3, 9, 2, 2]
