@@ -1,39 +1,28 @@
-from asd_itmo.lab3.utils import open_file, write_file
+from lab3.utils import open_file, write_file, measuring, print_input_output
 
 
 PATH_INPUT = '../txtf/input.txt'
 PATH_OUTPUT = '../txtf/output.txt'
 
 
-def count_interval(n, k, intervals, dots):
-    result = [0] * k
-    for ind in range(k):
+def count_intervals(s, p, intervals, dots):
+    nums = [0] * p
+    for i in range(p):
         for interval in intervals:
-            if interval[0] < dots[ind] and dots[ind] < interval[-1]:
-                result[ind] += 1
-    return result
+            if interval[0] < dots[i] < interval[-1]:
+                nums[i] += 1
+    return nums
 
 
-def task_4():
-    data = open_file(PATH_INPUT)
-    s, p = map(int, data[0].split())
-    intervals = [list(map(int, i.split())) for i in data[1:s + 1]]
-    dots = list(map(int, data[s + 1].split()))
-    write_file(count_interval(s, p, intervals, dots), PATH_OUTPUT)
+def task_4(input_file, output_file):
+    s, p, intervals, dots = open_file(input_file)
+    inputs = (str(s) + ' ' + str(p) + '\n' + "\n".join(" ".join(map(str, interval)) for interval in intervals) +
+              '\n' + " ".join(map(str, dots)))
+    result = count_intervals(s, p, intervals, dots)
+    write_file(result, output_file)
+    print_input_output(inputs=inputs, result=' '.join(map(str, result)))
+    measuring(count_intervals, s, p, intervals, dots)
 
 
-def task_2():
-    n, nums = open_file(PATH_INPUT)
-    if 1 <= n <= 2 * (10 ** 4) and all([abs(n) <= 10 ** 9 for _ in nums]):
-        res = list()
-        merge_sort_output(nums, [0] * n, 0, n - 1, res)
-        for num_line in res:
-            write_file(num_line + "\n", PATH_OUTPUT)
-        write_file(" ".join(map(str, nums)), PATH_OUTPUT)
-
-    else:
-        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
-
-
-if __name__ == "__main__":
-    task_4()
+if __name__ == '__main__':
+    task_4(PATH_INPUT, PATH_OUTPUT)

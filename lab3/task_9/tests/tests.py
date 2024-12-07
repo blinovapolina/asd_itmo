@@ -1,19 +1,18 @@
 import unittest
 import datetime
-from lab3.task_1.src.lab3_1_1 import randomized_quicksort as sort_1
-from lab3.task_1.src.lab3_1_2 import randomized_quicksort as sort_2
+from lab3.task_9.src.lab3_9 import closest_pair
 
 
 class TestMergeSortCount(unittest.TestCase):
     def test1_should_sort_given_list(self):
         # Given
-        unsorted_list = [2, 3, 9, 2, 2]
-        expected_time = datetime.timedelta(2)
-        expected_result = [2, 2, 2, 3, 9]
+        given_points = [[0, 0], [3, 4]]
+        expected_time = datetime.timedelta(10)
+        expected_result = 5.0
 
         # When
         start_time = datetime.datetime.now()  # Запускаем счётчик времени
-        result = sort_1(unsorted_list, 0, len(unsorted_list) - 1)
+        result = closest_pair(given_points)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
         print("Тест1.Итоговое время алгоритма:", result_time)
@@ -24,16 +23,34 @@ class TestMergeSortCount(unittest.TestCase):
 
     def test2_should_sort_given_list(self):
         # Given
-        unsorted_list = [2, 3, 9, 2, 2]
-        expected_time = datetime.timedelta(2)
-        expected_result = [2, 2, 2, 3, 9]
+        given_points = [[7, 7], [1, 100], [4, 8], [7, 7]]
+        expected_time = datetime.timedelta(10)
+        expected_result = 0.0
 
         # When
         start_time = datetime.datetime.now()  # Запускаем счётчик времени
-        result = sort_2(unsorted_list, 0, len(unsorted_list) - 1)
+        result = closest_pair(given_points)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
         print("Тест2.Итоговое время алгоритма:", result_time)
+
+        # Then
+        self.assertEqual(result, expected_result)
+        self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
+
+    def test3_should_sort_given_list(self):
+        # Given
+        given_points = [[4, 4], [-2, -2], [-3, -4], [-1, 3], [2, 3], [-4, 0],
+                        [1, 1], [-1, -1], [3, -1], [-4, 2], [-2, 4]]
+        expected_time = datetime.timedelta(10)
+        expected_result = 1.4142
+
+        # When
+        start_time = datetime.datetime.now()  # Запускаем счётчик времени
+        result = float(f'{closest_pair(given_points):.5}')
+        finish_time = datetime.datetime.now()  # Измеряем время конца работы
+        result_time = finish_time - start_time
+        print("Тест3.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)

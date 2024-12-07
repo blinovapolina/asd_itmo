@@ -1,4 +1,4 @@
-from asd_itmo.lab2.utils import open_file, write_file, measuring
+from lab2.utils import open_file, write_file, measuring
 
 
 PATH_INPUT = '../txtf/input_1.txt'
