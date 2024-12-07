@@ -39,5 +39,5 @@
 ## Тестирование
 Для запуска тестов выполните:
 ```bash
-    pytest tests/
+    python -m unittest -v lab2.task_3.tests.tests
 ```
