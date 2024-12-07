@@ -1,4 +1,4 @@
-from lab2.utils import open_file, write_file, measuring
+from lab2.utils import open_file, write_file, measuring, print_input_output
 
 
 PATH_INPUT = '../txtf/input_1.txt'
@@ -38,17 +38,14 @@ def majority(n, list_arr):
     return 0
 
 
-def task_5():
-    n, nums = open_file(PATH_INPUT)
-    if 1 <= n <= 10 ** 5 and all([abs(n) <= 10 ** 9 for _ in nums]):
-        write_file(str(majority(n, nums)), PATH_OUTPUT)
-        measuring(majority, n, nums)
-    else:
-        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
+def task_5(input_file, output_file):
+    n, nums = open_file(input_file)
+    inputs = str(n) + '\n' + ' '.join(map(str, nums))
+    result = str(majority(n, nums))
+    write_file(result, output_file)
+    print_input_output(inputs=inputs, result=result)
+    measuring(majority, n, nums)
 
 
 if __name__ == "__main__":
-    task_5()
-
-
-
+    task_5(PATH_INPUT, PATH_OUTPUT)

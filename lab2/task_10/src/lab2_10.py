@@ -1,4 +1,4 @@
-from asd_itmo.lab2.utils import open_file, write_file, measuring
+from lab2.utils import open_file, write_file, measuring, print_input_output
 
 
 PATH_INPUT = '../txtf/input.txt'
@@ -42,19 +42,14 @@ def merge_sort(list_arr):
     return merge(left_list, right_list)
 
 
-def task_10():
-    n, nums = open_file(PATH_INPUT)
-    if 1 <= n <= 10 ** 5 and all([abs(n) <= 10 ** 9 for _ in nums]):
-        write_file(merge_sort(nums), PATH_OUTPUT)
-        measuring(merge_sort, nums)
-    else:
-        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
+def task_10(input_file, output_file):
+    n, nums = open_file(input_file)
+    inputs = str(n) + '\n' + ' '.join(map(str, nums))
+    result = ' '.join(map(str, merge_sort(nums)))
+    write_file(result, output_file)
+    print_input_output(inputs=inputs, result=result)
+    measuring(merge_sort, nums)
 
 
 if __name__ == "__main__":
-    task_10()
-
-
-
-
-
+    task_10(PATH_INPUT, PATH_OUTPUT)

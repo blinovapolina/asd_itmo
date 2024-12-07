@@ -1,4 +1,4 @@
-from lab2.utils import open_file, write_file, measuring
+from lab2.utils import open_file, write_file, measuring, print_input_output
 
 
 PATH_INPUT = '../txtf/input.txt'
@@ -51,17 +51,12 @@ def merge_sort_count(list_arr, temp, left_i, right_i):
 
 
 def task_3(input_file, output_file):
-    n, nums = open_file(PATH_INPUT)
-
-    write_file(str((merge_sort_count(nums, [0] * n, 0, n - 1))), PATH_OUTPUT)
-    measuring(merge_sort_count, nums, [0] * n, 0, n - 1)
-
     n, nums = open_file(input_file)
-    inputs = str(n)
-    result = ' '.join(map(str, anti_qsort(n)))
+    inputs = str(n) + '\n' + ' '.join(map(str, nums))
+    result = str((merge_sort_count(nums, [0] * n, 0, n - 1)))
     write_file(result, output_file)
     print_input_output(inputs=inputs, result=result)
-    measuring(anti_qsort, n)
+    measuring(merge_sort_count, nums, [0] * n, 0, n - 1)
 
 
 if __name__ == "__main__":

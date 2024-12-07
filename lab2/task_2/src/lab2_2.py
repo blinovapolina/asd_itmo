@@ -1,4 +1,4 @@
-from lab2.utils import open_file, write_file, measuring
+from lab2.utils import open_file, write_file, measuring, print_input_output
 
 
 PATH_INPUT = '../txtf/input.txt'
@@ -45,26 +45,16 @@ def merge_sort_output(list_arr, temp, left_i, right_i, res):
         merge_output(list_arr, temp, left_i, middle, right_i, res)
 
 
-def task_2():
-    n, nums = open_file(PATH_INPUT)
-    if 1 <= n <= 2 * (10 ** 4) and all([abs(n) <= 10 ** 9 for _ in nums]):
-        print(f'Входные данные: \n{n}\n{" ".join(map(str, nums))}')
-        res = list()
-        merge_sort_output(nums, [0] * n, 0, n - 1, res)
-        for num_line in res:
-            write_file(num_line + "\n", PATH_OUTPUT)
-        write_file(" ".join(map(str, nums)), PATH_OUTPUT)
-        print('Результат:\n' + "\n".join(map(str, res)) + '\n' + " ".join(map(str, nums)))
-        measuring(merge_sort_output, nums, [0] * n, 0, n - 1, res)
-
-    else:
-        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
+def task_2(input_file, output_file):
+    n, nums = open_file(input_file)
+    inputs = str(n) + '\n' + ' '.join(map(str, nums))
+    res = list()
+    merge_sort_output(nums, [0] * n, 0, n - 1, res)
+    result = "\n".join(map(str, res)) + '\n' + " ".join(map(str, nums))
+    write_file(result, output_file)
+    print_input_output(inputs=inputs, result=result)
+    measuring(merge_sort_output, nums, [0] * n, 0, n - 1, res)
 
 
 if __name__ == "__main__":
-    task_2()
-
-
-
-
-
+    task_2(PATH_INPUT, PATH_OUTPUT)

@@ -39,20 +39,14 @@ def merge_sort(n, list_arr):
     return merge(left_list, right_list)
 
 
-def task_1():
-    n, nums = open_file(PATH_INPUT)
-    if 1 <= n <= 2 * (10 ** 4) and all([abs(n) <= 10 ** 9 for _ in nums]):
-        inputs = str(n) + '\n' + ' '.join(map(str, nums))
-        result = ' '.join(map(str, merge_sort(n, nums)))
-        write_file(result, PATH_OUTPUT)
-        print_input_output(inputs=inputs, result=result)
-        measuring(merge_sort, n, nums)
-    else:
-        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
+def task_1(input_file, output_file):
+    n, nums = open_file(input_file)
+    inputs = str(n) + '\n' + ' '.join(map(str, nums))
+    result = ' '.join(map(str, merge_sort(n, nums)))
+    write_file(result, output_file)
+    print_input_output(inputs=inputs, result=result)
+    measuring(merge_sort, n, nums)
 
 
 if __name__ == "__main__":
-    task_1()
-
-
-
+    task_1(PATH_INPUT, PATH_OUTPUT)

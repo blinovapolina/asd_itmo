@@ -1,4 +1,4 @@
-from asd_itmo.lab2.utils import open_file, write_file, measuring
+from lab2.utils import open_file, write_file, measuring, print_input_output
 
 
 PATH_INPUT = '../txtf/input.txt'
@@ -26,15 +26,14 @@ def search_elements(array, targets):
     return result
 
 
-def task_4():
-    n, nums, k, list_search = open_file(PATH_INPUT)
-    if 1 <= n <= 10 ** 5 and 1 <= k <= 10 ** 5 and all([abs(n) <= 10 ** 9 for _ in nums]):
-        write_file(search_elements(nums, list_search), PATH_OUTPUT)
-        measuring(search_elements, nums, list_search)
-    else:
-        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
+def task_4(input_file, output_file):
+    n, nums, k, list_search = open_file(input_file)
+    inputs = str(n) + '\n' + ' '.join(map(str, nums)) +'\n' + str(k) + ' '.join(map(str, list_search))
+    result = ' '.join(map(str, search_elements(nums, list_search)))
+    write_file(result, output_file)
+    print_input_output(inputs=inputs, result=result)
+    measuring(search_elements, nums, list_search)
 
 
 if __name__ == "__main__":
-    task_4()
-
+    task_4(PATH_INPUT, PATH_OUTPUT)
