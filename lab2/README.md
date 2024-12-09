@@ -26,14 +26,14 @@
    ```
 3. **Запуску всех задач**
     ```bash
-        python run_lab.py
+    python run_lab.py
 
 4. **Запуску всех  тестов задач**
     ```bash
-        python run_tests.py
+    python run_tests.py
 
 ## Тестирование
 Для запуска тестов выполните:
 ```bash
-    python -m unittest -v lab2.run_tests
+python -m unittest -v lab2.run_tests
 ```
