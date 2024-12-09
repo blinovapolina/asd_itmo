@@ -1,6 +1,6 @@
 import time
 import tracemalloc
-from lab1.utils import open_file, write_file
+from lab1.utils import open_file, write_file, print_input_output, measuring
 
 
 PATH_INPUT = '../txtf/input_1.txt'
@@ -36,20 +36,14 @@ def palindrom(str_in):
         return chet_letters + chet_letters[::-1]
 
 
-def task_10():
-    start = time.perf_counter()
-    tracemalloc.start()
-    n, letters = open_file(PATH_INPUT)
-    if 1 <= n <= 100000:
-        write_file(palindrom(letters), PATH_OUTPUT)
-    else:
-        print("Количество элементов не соответствует ограничениям")
-    finish = time.perf_counter()
-    print('Время работы: ' + str(finish - start))
-    print('Память: ' + str(tracemalloc.get_traced_memory()[1] / 1024) + ' Кб')
-    tracemalloc.stop()
+def task_10(input_file, output_file):
+    n, letters = open_file(input_file)
+    inputs = (str(n) + "\n" + " ".join(map(str, letters)))
+    result = ' '.join(map(str, palindrom(letters)))
+    write_file(result, output_file)
+    print_input_output(inputs=inputs, result=result)
+    measuring(palindrom, letters)
 
 
-if __name__ == "__main__":
-    task_10()
-
+if __name__ == '__main__':
+    task_10(PATH_INPUT, PATH_OUTPUT)

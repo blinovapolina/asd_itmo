@@ -1,4 +1,4 @@
-from lab1.utils import open_file, write_file
+from lab1.utils import open_file, write_file, print_input_output, measuring
 
 
 
@@ -24,5 +24,17 @@ def task_6():
 
 if __name__ == "__main__":
     task_6()
+
+def task_5(input_file, output_file):
+    n, nums = open_file(input_file)
+    inputs = (str(n) + "\n" + " ".join(map(str, nums)))
+    result = ' '.join(map(str, bubble_sort(n, nums)))
+    write_file(result, output_file)
+    print_input_output(inputs=inputs, result=result)
+    measuring(bubble_sort, n, nums)
+
+
+if __name__ == '__main__':
+    task_5(PATH_INPUT, PATH_OUTPUT)
 
 

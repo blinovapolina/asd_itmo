@@ -1,4 +1,4 @@
-from lab1.utils import open_file, write_file
+from lab1.utils import open_file, write_file, print_input_output, measuring
 
 
 PATH_INPUT = '../txtf/input.txt'
@@ -15,15 +15,14 @@ def selection_sort(n, A):
     return A
 
 
-def task_5():
-    n, nums = open_file(PATH_INPUT)
-    if 1 <= n <= 10 ** 3 and all([abs(n) <= 10 ** 9 for x in nums]):
-        write_file(selection_sort(n, nums), PATH_OUTPUT)
-    else:
-        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
+def task_5(input_file, output_file):
+    n, nums = open_file(input_file)
+    inputs = (str(n) + "\n" + " ".join(map(str, nums)))
+    result = ' '.join(map(str, selection_sort(n, nums)))
+    write_file(result, output_file)
+    print_input_output(inputs=inputs, result=result)
+    measuring(selection_sort, n, nums)
 
 
-if __name__ == "__main__":
-    task_5()
-
-
+if __name__ == '__main__':
+    task_5(PATH_INPUT, PATH_OUTPUT)
