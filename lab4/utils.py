@@ -7,6 +7,8 @@ def open_file(file_name):
         data = file.readlines()
         if len(data) == 1:
             return data[0]
+        elif len(data) == 2:
+            return int(data[0]), data[1]
         # elif len(data) == 2:
         #     if ord(data[1][0]) in range(65, 91):
         #         arr = [i for i in data[1]]
@@ -29,11 +31,12 @@ def open_file(file_name):
             n = int(data[0].rstrip())
             list_input = list(data[i].rstrip() for i in range(1, n + 1))
             return n, list_input
-        # else:
-        #     n, k = map(int, data[0].split())
-        #     intervals = [list(map(int, i.split())) for i in data[1:n + 1]]
-        #     dots = list(map(int, data[n + 1].split()))
-        #     return n, k, intervals, dots
+        else:
+            return list(map(int, data))
+            # n, k = map(int, data[0].split())
+            # intervals = [list(map(int, i.split())) for i in data[1:n + 1]]
+            # dots = list(map(int, data[n + 1].split()))
+            # return n, k, intervals, dots
 
 
 def write_file(arr, file_name):
