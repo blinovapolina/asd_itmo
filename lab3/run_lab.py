@@ -16,13 +16,13 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 def main():
     path = os.path.abspath(os.path.dirname(__file__))
     tasks = {
-        "Задание №1.1": (task3_1_1, [path+"/task_1/txtf/input1.txt"]),
-        "Задание №1.2": (task3_1_2, [path + "/task_1/txtf/input1.txt"]),
-        "Задание №2": (task3_2, [path+"/task_2/txtf/input1.txt"]),
-        "Задание №3": (task3_3, [path+"/task_3/txtf/input1.txt"]),
-        "Задание №4": (task3_4, [path+"/task_4/txtf/input1.txt"]),
-        "Задание №6": (task3_6, [path+"/task_6/txtf/input1.txt"]),
-        "Задание №9": (task3_9, [path+"/task_9/txtf/input1.txt"]),
+        "Задание №1.1": (task3_1_1, [path+"/task_1/txtf/input.txt"]),
+        "Задание №1.2": (task3_1_2, [path + "/task_1/txtf/input.txt"]),
+        "Задание №2": (task3_2, [path+"/task_2/txtf/input.txt"]),
+        "Задание №3": (task3_3, [path+"/task_3/txtf/input.txt"]),
+        "Задание №4": (task3_4, [path+"/task_4/txtf/input.txt"]),
+        "Задание №6": (task3_6, [path+"/task_6/txtf/input.txt"]),
+        "Задание №9": (task3_9, [path+"/task_9/txtf/input.txt"]),
     }
 
     for task_name, (task_func, inputs) in tasks.items():
