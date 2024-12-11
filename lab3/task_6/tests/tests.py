@@ -3,7 +3,7 @@ import datetime
 from lab3.task_6.src.lab3_6 import summa_ten_sort
 
 
-class TestMergeSortCount(unittest.TestCase):
+class TestSummaSort(unittest.TestCase):
     def test_should_sort_given_list(self):
         # Given
         given_a = [7, 1, 4, 9]
@@ -16,7 +16,6 @@ class TestMergeSortCount(unittest.TestCase):
         result = summa_ten_sort(given_a, given_b)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)

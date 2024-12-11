@@ -3,7 +3,7 @@ import datetime
 from lab3.task_3.src.lab3_3 import pugalo_sort
 
 
-class TestMergeSortCount(unittest.TestCase):
+class TestPugaloSort(unittest.TestCase):
     def test1_should_sort_given_list(self):
         # Given
         n, k = 3, 2
@@ -16,7 +16,6 @@ class TestMergeSortCount(unittest.TestCase):
         result = pugalo_sort(n, k, unsorted_list)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест1.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)
@@ -34,7 +33,6 @@ class TestMergeSortCount(unittest.TestCase):
         result = pugalo_sort(n, k, unsorted_list)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест2.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)

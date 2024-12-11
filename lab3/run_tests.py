@@ -21,11 +21,10 @@ def run_all_tests():
 
     for test_file in test_files:
         try:
-            print(f'======= RUNNING {".".join(test_file.split('.')[:2])} TESTS =======')
             suite = unittest.defaultTestLoader.loadTestsFromName(test_file)
             runner = unittest.TextTestRunner()
             runner.run(suite)
-            print(f'======= RUNNING {".".join(test_file.split('.')[:2])} COMPLETED =======' + '\n')
+            print(f'======= RUNNING {".".join(test_file.split('.')[:2])} COMPLETED =======')
         except ModuleNotFoundError as e:
             print(f"Ошибка при добавлении теста {test_file}: {e}")
 

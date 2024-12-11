@@ -5,7 +5,7 @@ from lab3.task_1.src.lab3_1_1 import randomized_quicksort as sort_1
 from lab3.task_1.src.lab3_1_2 import randomized_quicksort as sort_2
 
 
-class TestMergeSortCount(unittest.TestCase):
+class TestQuickSort(unittest.TestCase):
     def test1_should_sort_given_list(self):
         # Given
         unsorted_list = [2, 3, 9, 2, 2]
@@ -17,7 +17,6 @@ class TestMergeSortCount(unittest.TestCase):
         result = sort_1(unsorted_list, 0, len(unsorted_list) - 1)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест1.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)
@@ -34,7 +33,6 @@ class TestMergeSortCount(unittest.TestCase):
         result = sort_2(unsorted_list, 0, len(unsorted_list) - 1)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест2.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)

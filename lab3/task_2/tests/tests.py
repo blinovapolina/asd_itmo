@@ -3,7 +3,7 @@ import datetime
 from lab3.task_2.src.lab3_2 import anti_qsort
 
 
-class TestMergeSortCount(unittest.TestCase):
+class TestAntiQsort(unittest.TestCase):
     def test_should_sort_given_list(self):
         # Given
         given_input = 3
@@ -15,7 +15,6 @@ class TestMergeSortCount(unittest.TestCase):
         result = anti_qsort(given_input)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)
