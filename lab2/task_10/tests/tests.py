@@ -17,7 +17,6 @@ class TestMergeSort(unittest.TestCase):
         result = merge_sort(unsorted_list)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест1.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)
@@ -35,7 +34,6 @@ class TestMergeSort(unittest.TestCase):
         result = merge_sort(unsorted_list)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест2.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)
@@ -53,7 +51,6 @@ class TestMergeSort(unittest.TestCase):
         result = merge_sort(unsorted_list)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест3.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)

@@ -15,7 +15,6 @@ class TestMajority(unittest.TestCase):
         result = majority(len(unsorted_list), unsorted_list)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)
