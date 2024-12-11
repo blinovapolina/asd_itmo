@@ -16,7 +16,6 @@ class TestMergeSortCount(unittest.TestCase):
             result = check_brackets(brackets_given)
             finish_time = datetime.datetime.now()  # Измеряем время конца работы
             result_time = finish_time - start_time
-            print("Тест1.Итоговое время алгоритма:", result_time)
 
             # Then
             self.assertEqual(result, expected_result)
@@ -33,7 +32,6 @@ class TestMergeSortCount(unittest.TestCase):
             result = check_brackets(brackets_given)
             finish_time = datetime.datetime.now()  # Измеряем время конца работы
             result_time = finish_time - start_time
-            print("Тест2.Итоговое время алгоритма:", result_time)
 
             # Then
             self.assertEqual(result, expected_result)
@@ -50,7 +48,6 @@ class TestMergeSortCount(unittest.TestCase):
             result = check_brackets(brackets_given)
             finish_time = datetime.datetime.now()  # Измеряем время конца работы
             result_time = finish_time - start_time
-            print("Тест3.Итоговое время алгоритма:", result_time)
 
             # Then
             self.assertEqual(result, expected_result)
@@ -67,7 +64,6 @@ class TestMergeSortCount(unittest.TestCase):
             result = check_brackets(brackets_given)
             finish_time = datetime.datetime.now()  # Измеряем время конца работы
             result_time = finish_time - start_time
-            print("Тест1.Итоговое время алгоритма:", result_time)
 
             # Then
             self.assertEqual(result, expected_result)
@@ -84,7 +80,6 @@ class TestMergeSortCount(unittest.TestCase):
             result = check_brackets(brackets_given)
             finish_time = datetime.datetime.now()  # Измеряем время конца работы
             result_time = finish_time - start_time
-            print("Тест5.Итоговое время алгоритма:", result_time)
 
             # Then
             self.assertEqual(result, expected_result)
@@ -101,7 +96,6 @@ class TestMergeSortCount(unittest.TestCase):
             result = check_brackets(brackets_given)
             finish_time = datetime.datetime.now()  # Измеряем время конца работы
             result_time = finish_time - start_time
-            print("Тест1.Итоговое время алгоритма:", result_time)
 
             # Then
             self.assertEqual(result, expected_result)
@@ -118,7 +112,6 @@ class TestMergeSortCount(unittest.TestCase):
             result = check_brackets(brackets_given)
             finish_time = datetime.datetime.now()  # Измеряем время конца работы
             result_time = finish_time - start_time
-            print("Тест7.Итоговое время алгоритма:", result_time)
 
             # Then
             self.assertEqual(result, expected_result)
@@ -135,7 +128,6 @@ class TestMergeSortCount(unittest.TestCase):
             result = check_brackets(brackets_given)
             finish_time = datetime.datetime.now()  # Измеряем время конца работы
             result_time = finish_time - start_time
-            print("Тест8.Итоговое время алгоритма:", result_time)
 
             # Then
             self.assertEqual(result, expected_result)

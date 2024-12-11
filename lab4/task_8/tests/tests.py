@@ -16,7 +16,6 @@ class TestMergeSortCount(unittest.TestCase):
         result = postfix_calculate(commands)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест1.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)
@@ -33,7 +32,6 @@ class TestMergeSortCount(unittest.TestCase):
         result = postfix_calculate(commands)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
-        print("Тест2.Итоговое время алгоритма:", result_time)
 
         # Then
         self.assertEqual(result, expected_result)
