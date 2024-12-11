@@ -4,7 +4,7 @@ import datetime
 from lab4.task_13.src.lab4_13_1 import result_f as stack
 
 
-class TestMergeSortCount(unittest.TestCase):
+class TestStack(unittest.TestCase):
     def test1_stack(self):
         # Given
         nums = [1, 2, 3]

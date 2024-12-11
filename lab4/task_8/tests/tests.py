@@ -4,8 +4,8 @@ import datetime
 from lab4.task_8.src.lab4_8 import postfix_calculate
 
 
-class TestMergeSortCount(unittest.TestCase):
-    def test1_should_sort_given_list(self):
+class TestPostfixCalculate(unittest.TestCase):
+    def test1_should_postfix_calculate(self):
         # Given
         commands = '8 9 + 1 7 - *'
         expected_time = datetime.timedelta(2)
@@ -21,7 +21,7 @@ class TestMergeSortCount(unittest.TestCase):
         self.assertEqual(result, expected_result)
         self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
 
-    def test2_should_sort_given_list(self):
+    def test2_should_postfix_calculate(self):
         # Given
         commands = '8 9 +'
         expected_time = datetime.timedelta(2)

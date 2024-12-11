@@ -4,8 +4,8 @@ import datetime
 from lab4.task_1.src.lab4_1 import stack_commands
 
 
-class TestMergeSortCount(unittest.TestCase):
-    def test1_should_sort_given_list(self):
+class TestStack(unittest.TestCase):
+    def test1_should_stack_commands(self):
         # Given
         commands = ['+ 1', '+ 10', '-', '+ 2', '+ 1234', '-']
         expected_time = datetime.timedelta(2)

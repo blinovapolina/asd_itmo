@@ -4,8 +4,8 @@ import datetime
 from lab4.task_4.src.lab4_4 import check_brackets
 
 
-class TestMergeSortCount(unittest.TestCase):
-        def test1_should_sort_given_list(self):
+class TestCheckBrackets(unittest.TestCase):
+        def test1_should_check_brackets(self):
             # Given
             brackets_given = '[]'
             expected_time = datetime.timedelta(5)
@@ -21,7 +21,7 @@ class TestMergeSortCount(unittest.TestCase):
             self.assertEqual(result, expected_result)
             self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
 
-        def test2_should_sort_given_list(self):
+        def test2_should_scheck_brackets(self):
             # Given
             brackets_given = '{}[]'
             expected_time = datetime.timedelta(5)
@@ -37,7 +37,7 @@ class TestMergeSortCount(unittest.TestCase):
             self.assertEqual(result, expected_result)
             self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
 
-        def test3_should_sort_given_list(self):
+        def test3_should_check_brackets(self):
             # Given
             brackets_given = '[()]'
             expected_time = datetime.timedelta(5)
@@ -53,7 +53,7 @@ class TestMergeSortCount(unittest.TestCase):
             self.assertEqual(result, expected_result)
             self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
 
-        def test4_should_sort_given_list(self):
+        def test4_should_check_brackets(self):
             # Given
             brackets_given = '(())'
             expected_time = datetime.timedelta(5)
@@ -69,7 +69,7 @@ class TestMergeSortCount(unittest.TestCase):
             self.assertEqual(result, expected_result)
             self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
 
-        def test5_should_sort_given_list(self):
+        def test5_should_check_brackets(self):
             # Given
             brackets_given = '{'
             expected_time = datetime.timedelta(5)
@@ -85,7 +85,7 @@ class TestMergeSortCount(unittest.TestCase):
             self.assertEqual(result, expected_result)
             self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
 
-        def test6_should_sort_given_list(self):
+        def test6_should_check_brackets(self):
             # Given
             brackets_given = '{[}'
             expected_time = datetime.timedelta(5)
@@ -101,7 +101,7 @@ class TestMergeSortCount(unittest.TestCase):
             self.assertEqual(result, expected_result)
             self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
 
-        def test7_should_sort_given_list(self):
+        def test7_should_check_brackets(self):
             # Given
             brackets_given = 'foo(bar);'
             expected_time = datetime.timedelta(5)
@@ -117,7 +117,7 @@ class TestMergeSortCount(unittest.TestCase):
             self.assertEqual(result, expected_result)
             self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
 
-        def test8_should_sort_given_list(self):
+        def test8_should_check_brackets(self):
             # Given
             brackets_given = 'foo(bar[i);'
             expected_time = datetime.timedelta(5)
