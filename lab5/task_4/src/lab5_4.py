@@ -33,7 +33,6 @@ def build_heap(n, nums):
 def result_f(n, nums):
     result = ''
     swaps = build_heap(n, nums)
-    print(swaps)
     result += str(len(swaps))
     if swaps:
         for i, j in swaps:
