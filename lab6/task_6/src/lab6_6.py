@@ -11,6 +11,7 @@ def is_fibonacci_number(number):
     f2 = 5 * x ** 2 - 4
     return math.isqrt(f1) ** 2 == f1 or math.isqrt(f2) ** 2 == f2
 
+
 def fibonacci_check(arr):
     result = []
     for number in arr:
