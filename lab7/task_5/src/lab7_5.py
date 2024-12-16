@@ -4,7 +4,6 @@ PATH_INPUT = '../txtf/input.txt'
 PATH_OUTPUT = '../txtf/output.txt'
 
 
-
 def longest_common_subsequence(n, a, m, b, l, c):
     table = [[[0] * (l + 1) for _ in range(m + 1)] for __ in range(n + 1)]
 
