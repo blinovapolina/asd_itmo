@@ -1,9 +1,62 @@
-from asd_itmo.lab1.task_5.src.lab1_5 import insertion_sort
-from asd_itmo.lab1.utils import test
+import unittest
+import datetime
+import random
+
+from lab1.task_5.src.lab1_5 import selection_sort
 
 
-example_arr = [31, 41, 59, 26, 41, 58]
+class TestSort(unittest.TestCase):
+    def test1_should_sort_given_list(self):
+        # Given
+        unsorted_list = [31, 41, 59, 26, 41, 58]
+        expected_time = datetime.timedelta(1)
+        expected_result = sorted(unsorted_list)
 
-print(f'Пример: {test(insertion_sort, example_arr)}\n')
-print(f'Минимум: {test(insertion_sort, min_arr = True)}\n')
-print(f'Максимум: {test(insertion_sort, max_arr = True, random_in=(-10 ** 9, 10 ** 9 + 1), range_input = 10 ** 3)}\n')
+        # When
+        start_time = datetime.datetime.now()  # Запускаем счётчик времени
+        result = selection_sort(len(unsorted_list), unsorted_list)
+        finish_time = datetime.datetime.now()  # Измеряем время конца работы
+        result_time = finish_time - start_time
+
+        # Then
+        self.assertEqual(result, expected_result)
+        self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
+
+    def test_should_sort_small_list(self):
+        # Given
+        small_size = 1000
+        unsorted_list = [random.randint(-10 ** 9, 10 ** 9) for _ in range(small_size)]
+        expected_time = datetime.timedelta(2)
+        expected_result = sorted(unsorted_list)
+
+        # When
+        start_time = datetime.datetime.now()  # Запускаем счётчик времени
+        result = selection_sort(len(unsorted_list), unsorted_list)
+        finish_time = datetime.datetime.now()  # Измеряем время конца работы
+        result_time = finish_time - start_time
+
+        # Then
+        self.assertEqual(result, expected_result)
+        self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
+
+    def test_should_sort_large_list(self):
+        # Given
+        medium_size = 10 ** 4
+        unsorted_list = [random.randint(-10 ** 9, 10 ** 9) for _ in range(medium_size)]
+        expected_time = datetime.timedelta(2)
+        expected_result = sorted(unsorted_list)
+
+        # When
+        start_time = datetime.datetime.now()  # Запускаем счётчик времени
+        result = selection_sort(len(unsorted_list), unsorted_list)
+        finish_time = datetime.datetime.now()  # Измеряем время конца работы
+        result_time = finish_time - start_time
+
+        # Then
+        self.assertEqual(result, expected_result)
+        self.assertLessEqual(result_time, expected_time, f"Значение {result_time} превышает порог {expected_time}")
+
+
+if __name__ == '__main__':
+    unittest.main()
+

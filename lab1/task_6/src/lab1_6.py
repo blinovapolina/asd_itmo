@@ -14,18 +14,7 @@ def bubble_sort(n, A):
     return A
 
 
-def task_6():
-    n, nums = open_file(PATH_INPUT)
-    if 1 <= n <= 10 ** 3 and all([abs(n) <= 10 ** 9 for x in nums]):
-        write_file(bubble_sort(n, nums), PATH_OUTPUT)
-    else:
-        print("Число в массиве по модулю превосходит 10^9 или количество элементов не соответствует ограничениям")
-
-
-if __name__ == "__main__":
-    task_6()
-
-def task_5(input_file, output_file):
+def task_6(input_file, output_file):
     n, nums = open_file(input_file)
     inputs = (str(n) + "\n" + " ".join(map(str, nums)))
     result = ' '.join(map(str, bubble_sort(n, nums)))
@@ -35,6 +24,4 @@ def task_5(input_file, output_file):
 
 
 if __name__ == '__main__':
-    task_5(PATH_INPUT, PATH_OUTPUT)
-
-
+    task_6(PATH_INPUT, PATH_OUTPUT)

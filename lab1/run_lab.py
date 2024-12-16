@@ -21,7 +21,7 @@ def main():
         "Задание №3": (task1_3, [path+"/task_3/txtf/input.txt"]),
         "Задание №5": (task1_5, [path+"/task_5/txtf/input.txt"]),
         "Задание №6": (task1_6, [path + "/task_6/txtf/input.txt"]),
-        "Задание №10": (task1_10, [path+"/task_10/txtf/input.txt"]),
+        "Задание №10": (task1_10, [path+"/task_10/txtf/input_1.txt"]),
     }
 
     for task_name, (task_func, inputs) in tasks.items():

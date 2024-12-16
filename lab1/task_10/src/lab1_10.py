@@ -1,5 +1,3 @@
-import time
-import tracemalloc
 from lab1.utils import open_file, write_file, print_input_output, measuring
 
 
