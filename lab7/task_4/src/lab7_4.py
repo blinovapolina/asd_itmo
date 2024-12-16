@@ -3,6 +3,7 @@ from lab7.utils import open_file, write_file, measuring, print_input_output
 PATH_INPUT = '../txtf/input.txt'
 PATH_OUTPUT = '../txtf/output.txt'
 
+
 def longest_common_subsequence(n, m, seq1, seq2):
     table = [[0] * (m + 1) for _ in range(n + 1)]
 
