@@ -14,7 +14,7 @@ class TestIntervalsCount(unittest.TestCase):
 
         # When
         start_time = datetime.datetime.now()  # Запускаем счётчик времени
-        result = count_intervals(s, p, given_intervals, given_dots)
+        result = count_intervals(p, given_intervals, given_dots)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
 
@@ -32,7 +32,7 @@ class TestIntervalsCount(unittest.TestCase):
 
         # When
         start_time = datetime.datetime.now()  # Запускаем счётчик времени
-        result = count_intervals(s, p, given_intervals, given_dots)
+        result = count_intervals(p, given_intervals, given_dots)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
 
@@ -50,7 +50,7 @@ class TestIntervalsCount(unittest.TestCase):
 
         # When
         start_time = datetime.datetime.now()  # Запускаем счётчик времени
-        result = count_intervals(s, p, given_intervals, given_dots)
+        result = count_intervals(p, given_intervals, given_dots)
         finish_time = datetime.datetime.now()  # Измеряем время конца работы
         result_time = finish_time - start_time
 

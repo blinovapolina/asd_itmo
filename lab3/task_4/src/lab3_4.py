@@ -5,7 +5,7 @@ PATH_INPUT = '../txtf/input.txt'
 PATH_OUTPUT = '../txtf/output.txt'
 
 
-def count_intervals(s, p, intervals, dots):
+def count_intervals(p, intervals, dots):
     nums = [0] * p
     for i in range(p):
         for interval in intervals:
@@ -18,10 +18,10 @@ def task_4(input_file, output_file):
     s, p, intervals, dots = open_file(input_file)
     inputs = (str(s) + ' ' + str(p) + '\n' + "\n".join(" ".join(map(str, interval)) for interval in intervals) +
               '\n' + " ".join(map(str, dots)))
-    result = count_intervals(s, p, intervals, dots)
+    result = count_intervals(p, intervals, dots)
     write_file(result, output_file)
     print_input_output(inputs=inputs, result=' '.join(map(str, result)))
-    measuring(count_intervals, s, p, intervals, dots)
+    measuring(count_intervals, p, intervals, dots)
 
 
 if __name__ == '__main__':
