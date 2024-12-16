@@ -50,5 +50,5 @@
 ## Тестирование
 Для запуска тестов выполните:
 ```bash
-    python -m unittest -v lab6.task_4.tests.tests
+    python -m unittest -v lab7.task_4.tests.tests
 ```
