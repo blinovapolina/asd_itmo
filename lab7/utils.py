@@ -7,15 +7,30 @@ def open_file(file_name):
         data = file.readlines()
 
         try:
-            if len(data[1:]) == int(data[0]):
-                n = int(data[0])
-                points = list()
-                for i in range(1, n + 1):
-                    line = data[i]
-                    points.append(line)
-                return n, points
+
+            if len(data) == 2:
+                money, k = map(int, data[0].split())
+                coins = list(map(int, data[1].split()))
+                return money, k, coins
+
         except ValueError:
-            return data
+            return str(data[0][:-1]), str(data[1])
+
+        if len(data) == 4:
+            n = int(data[0])
+            a = list(map(int, data[1].split()))
+            m = int(data[2])
+            b = list(map(int, data[3].split()))
+            return n, a, m, b
+
+        elif len(data) == 6:
+            n = int(data[0])
+            a = list(map(int, data[1].split()))
+            m = int(data[2])
+            b = list(map(int, data[3].split()))
+            l = int(data[4])
+            c = list(map(int, data[5].split()))
+            return n, a, m, b, l, c
 
 
 def write_file(arr, file_name):

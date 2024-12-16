@@ -3,7 +3,8 @@ import subprocess
 
 if __name__ == '__main__':
     current_directory = os.getcwd()
-    for file in os.listdir(current_directory):
+    list_dir = sorted(os.listdir(current_directory))
+    for file in list_dir:
         if file.startswith('lab') and file != 'lab0' and file != 'lab1':
             lab_directory = os.path.join(current_directory, file)
             run_path = 'run_lab.py'
